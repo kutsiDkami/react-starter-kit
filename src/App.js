@@ -1,24 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import "./tailwind.css";
+import Button from "./components/Button";
+import Tab from "./components/Tab";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <div style={{ padding: 20 }}>
+        <Tab activeTab={0}>
+          <Tab.Panel Title="Home">1</Tab.Panel>
+          <Tab.Panel Title="Hakkımızda">2</Tab.Panel>
+          <Tab.Panel Title="Call">3</Tab.Panel>
+        </Tab>
+      </div>
+
+      <Button text="deneme" variant="danger" />
+      <Button text="deneme" variant="succes" />
+      <Button text="deneme" variant="warning" />
+      <Button text="deneme" />
+      <Button text="deneme" variant="" />
+    </>
   );
 }
 
