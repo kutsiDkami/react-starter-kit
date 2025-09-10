@@ -1,25 +1,12 @@
 import React from "react";
-import "./tailwind.css";
-import Button from "./components/Button";
-import Tab from "./components/Tab";
+import Ders6 from "./Dersler/ders-6";
+import MiniProje from "./Dersler/miniProje";
 
 function App() {
   return (
-    <>
-      <div style={{ padding: 20 }}>
-        <Tab activeTab={0}>
-          <Tab.Panel Title="Home">1</Tab.Panel>
-          <Tab.Panel Title="Hakkımızda">2</Tab.Panel>
-          <Tab.Panel Title="Call">3</Tab.Panel>
-        </Tab>
-      </div>
-
-      <Button text="deneme" variant="danger" />
-      <Button text="deneme" variant="succes" />
-      <Button text="deneme" variant="warning" />
-      <Button text="deneme" />
-      <Button text="deneme" variant="" />
-    </>
+    <div>
+      <MiniProje />
+    </div>
   );
 }
 

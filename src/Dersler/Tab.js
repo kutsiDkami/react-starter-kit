@@ -1,6 +1,6 @@
 import classNames from "classnames";
 import { useState, useEffect, use } from "react";
-function Tab({ children, activeTab, V2activetab, setV2activetab }) {
+function Tab({ children, activeTab }) {
   // console.log(children);
   //  gelen veriyi kontrol amaçlı
 
