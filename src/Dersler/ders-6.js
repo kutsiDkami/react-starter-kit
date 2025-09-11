@@ -3,6 +3,7 @@ import "../tailwind.css";
 
 function Lifecycle() {
   const [count, setCount] = useState(0);
+  const [show, setShow] = useState(true);
   const [ApiId, setApiId] = useState(19);
   const [post, setPost] = useState("boş");
   const mockApi = "https://64fc6978605a026163ae77aa.mockapi.io/listTodo/";
@@ -11,6 +12,15 @@ function Lifecycle() {
     //  console.log("deneme1 " + count);
     /* her tuş'a basıldığında güncelerler */
   });
+
+  useEffect(() => {
+    console.log("component ilk yüklendiğinde çalışır");
+    const interval = setInterval(() => console.log("interval çalıştı"), 1000);
+    return () => {
+      console.log("component destroyed");
+      clearInterval(interval);
+    };
+  }, []);
 
   useEffect(
     () => {
@@ -25,7 +35,6 @@ function Lifecycle() {
     ]
   );
 
-
   useEffect(() => {
     fetch(mockApi + ApiId)
       .then((response) => response.json())
@@ -39,11 +48,13 @@ function Lifecycle() {
         <button
           onClick={() => {
             setCount(count + 1);
+            /*üsteki setCount useEfect kontrol  */
           }}
           className="bg-yellow-500 rounded p-1 text-white m-1"
         >
-          Göster
+          Count 1+
         </button>
+        {count}
 
         <hr />
         <button
