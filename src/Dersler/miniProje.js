@@ -12,7 +12,7 @@ function MiniProje() {
       .then((response) => response.json())
       .then((data) => {
         if (data.message && data.message.includes("not found")) {
-          console.log("çalıştı");
+          // console.log("çalıştı"); kontrol
           setUser({
             firstName: "Böyle bir kullanıcı yok",
             lastName: "bilinmiyor",
